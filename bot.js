@@ -31,7 +31,6 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 const devs = ['389090790984515594','350408440566382592','286487166941528065'];
 const adminprefix = "%"
 const db = require('quick.db');
-const client = new Discord.Client();   
 const giphy = require('giphy-api')();    
 const googl = require('goo.gl');  
 const translate = require('google-translate-api');   
