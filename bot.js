@@ -29,7 +29,6 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 });
 
 const devs = ['389090790984515594','350408440566382592','286487166941528065'];
-var prefix = "%";
 const adminprefix = "%"
 const db = require('quick.db');
 const client = new Discord.Client();   
