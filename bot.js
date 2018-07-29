@@ -27,7 +27,7 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-const Discord = require('discord.js');
+
 const devs = ['389090790984515594','350408440566382592','286487166941528065'];
 var prefix = "%";
 const adminprefix = "%"
