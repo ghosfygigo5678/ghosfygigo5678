@@ -95,7 +95,7 @@ ${users.join('\n')}
   client.on('message', msg => {
     if(msg.author.bot) return;
     
-    if(msg.content === '!sr') {
+    if(msg.content === '%sr') {
       client.guilds.forEach(g => {
         
         let l = g.id
@@ -116,17 +116,6 @@ ${users.join('\n')}
     
   })
 
-client.on('message', message => {
-      if (!devs.includes(message.author.id)) return;
-  if (message.content.startsWith(adminprefix + 'sliver')) {
-    if (!devs.includes(message.author.id)) return; 
-let args = message.content.split(' ').slice(1).join(' ');
-
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
-client.users.forEach(m =>{
-m.sendMessage(args)
-})
-}});
 
 client.on('message', message => {
      if (message.author.bot) return;
@@ -152,6 +141,28 @@ client.on('message', message => {
     .setDescription(" مدة الرابط : ساعه  عدد استخدامات الرابط : 1 ")
       message.author.sendEmbed(Embed11)
     }
+});
+client.on("message", message => {
+    var prefix = "%";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "مسح")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
+        var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم",
+        color: 0x06DF00,
+        description: "تم مسح الرسائل بنجاح",
+        footer: {
+          text: "yazan"
+        }
+      }}).then(msg => {msg.delete(3000)});
+                          }
+
+     
 });
 
 client.on('message', message => {
