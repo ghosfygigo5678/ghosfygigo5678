@@ -341,7 +341,7 @@ client.on('message', msg => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=473363587986096151&permissions=485505073&scope=bot ')
+     .setURL('https://discordapp.com/oauth2/authorize?client_id=473506088277245952&permissions=284178480&scope=bot ')
   .setDescription(`**
   New Server Add Dollar Bot ✅
 اسم السيرفر: ${guild.name}
@@ -2496,7 +2496,7 @@ const channel = sWlc[message.guild.id].channel
                 if(message.content === prefix + "inv") {
                     let embed = new Discord.RichEmbed ()
                     embed.setTitle("arrow_right Invite Dollar Bot%")
-                    .setURL("https://discordapp.com/api/oauth2/authorize?client_id=473363587986096151&permissions=485505073&scope=bot");
+                    .setURL("https://discordapp.com/oauth2/authorize?client_id=473506088277245952&permissions=284178480&scope=bot");
                    message.channel.sendEmbed(embed);
                   }
 });
