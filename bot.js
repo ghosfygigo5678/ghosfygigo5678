@@ -2366,6 +2366,15 @@ client.on("message", message => {
   message.channel.sendEmbed(embed);
     }
 });
+client.on('message', message => {
+		     	var prefix ="%";
+                if(message.content === prefix + "inv") {
+                    let embed = new Discord.RichEmbed ()
+                    embed.setTitle("**:arrow_right: Invite Dollar Bot!**")
+                    .setURL("  ");
+                   message.channel.sendEmbed(embed);
+                  }
+});
 
              client.on('message', message => {
 		     	var prefix ="%";
@@ -2373,8 +2382,8 @@ client.on("message", message => {
                     let embed = new Discord.RichEmbed ()
                     embed.setTitle("**:arrow_right: Invite Dollar Bot!**")
 
-                    .setURL("https://discordapp.com/api/oauth2/authorize?client_id=472161900113952776&permissions=66482240&scope=bot");
-                   message.channel.sendEmbed(embed);
+                    .setURL("https://discordapp.com/oauth2/authorize?client_id=473363587986096151&permissions=284170288&scope=bot");
+                   message.cahhttps://discordapp.com/oauth2/authorize?client_id=473363587986096151&permissions=284170288&scope=bonnel.sendEmbed(embed);
                   }
 });
 
