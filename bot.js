@@ -2371,24 +2371,14 @@ client.on('message', message => {
                 if(message.content === prefix + "inv") {
                     let embed = new Discord.RichEmbed ()
                     embed.setTitle("**:arrow_right: Invite Dollar Bot!**")
-                    .setURL("  ");
+                    .setURL("https://discordapp.com/oauth2/authorize?client_id=473363587986096151&permissions=284170288&scope=bot");
                    message.channel.sendEmbed(embed);
                   }
 });
 
-             client.on('message', message => {
-		     	var prefix ="%";
-                if(message.content === prefix + "inv") {
-                    let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right: Invite Dollar Bot!**")
-
-                    .setURL("https://discordapp.com/oauth2/authorize?client_id=473363587986096151&permissions=284170288&scope=bot");
-                   message.cahhttps://discordapp.com/oauth2/authorize?client_id=473363587986096151&permissions=284170288&scope=bonnel.sendEmbed(embed);
-                  }
-});
 
 client.on('message', message => {
-    if (message.content.startsWith("-avatar")) {
+    if (message.content.startsWith("%avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
