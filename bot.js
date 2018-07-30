@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '.'
+const prefix = '%'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -995,7 +995,7 @@ client.on('message', message => {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ ! ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | MHSTR 2K,leader.ayman')
+			      .setFooter('By | By.Malk.Dollar')
     })
 }
 });
