@@ -341,12 +341,12 @@ client.on('message', msg => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
-     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=471464656242737183&permissions=2080898225&scope=bot ')
+     .setURL('https://discordapp.com/api/oauth2/authorize?client_id=473363587986096151&permissions=485505073&scope=bot ')
   .setDescription(`**
-  New Server Add sliver Bot ✅
+  New Server Add Dollar Bot ✅
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("472180208913481728").sendEmbed(embed)
+client.channels.get("286487166941528065").sendEmbed(embed)
 });
 var guilds = {};
 client.on('guildBanAdd', function(guild) {
@@ -444,12 +444,12 @@ client.on('guildDelete', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("GOLD")
      .setTitle('Click Here To Add Bot .!')
-     .setURL(' https://discordapp.com/api/oauth2/authorize?client_id=471464656242737183&permissions=2080898225&scope=bot ')
+     .setURL(' https://discordapp.com/api/oauth2/authorize?client_id=473363587986096151&permissions=485505073&scope=bot ')
   .setDescription(`**
   Server Kicked sliver Bot :cry:
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
-client.channels.get("472180208913481728").sendEmbed(embed)
+client.channels.get("286487166941528065").sendEmbed(embed)
 });
  
 
@@ -2495,7 +2495,7 @@ const channel = sWlc[message.guild.id].channel
 		     	var prefix ="%";
                 if(message.content === prefix + "inv") {
                     let embed = new Discord.RichEmbed ()
-                    embed.setTitle("arrow_right Invite Sliver Bot!")
+                    embed.setTitle("arrow_right Invite Dollar Bot!")
                     .setURL("https://discordapp.com/api/oauth2/authorize?client_id=473363587986096151&permissions=485505073&scope=bot");
                    message.channel.sendEmbed(embed);
                   }
