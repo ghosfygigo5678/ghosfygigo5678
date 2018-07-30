@@ -197,7 +197,7 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 『%image/صورة السيرفر』
 『%members/��عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص』
 『%id/معلومات عنك』
-『%باند/ عدد الاشخاص المبندة 』
+『%ban/ عدد الاشخاص المبندة』
 『%avatar/صورتك او صورة الي تمنشنو』
 『%embed/يكرر الي تقولو بشكل حلو』
 『%discrim/كود يضهر لك الاشخاص نفس تاقك』
@@ -221,8 +221,8 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 『%schannel / اضهار الشات المخفية』
 『%clr <numbr> / مسح الشات بعدد』
 『%clear / مسح الشات』
-『%mute @user <reason> / اعطاء العضو ميوت لازم رتبة <Muted>』
-『%unmute @user / لفك الميوت عن الشخص 』
+『%اسكت @user <reason> / اعطاء العضو ميوت لازم رتبة <Muted>』
+『%تكلم @user / لفك الميوت عن الشخص 』
 『%كيك @user <reason> / طرد الشخص من السيرفر』
 『%باند @user <reason> / حضر الشخص من السيرفر』
 『%mutechannel / تقفيل الشات』
@@ -249,7 +249,7 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
  **       
 『%rps / حجر ورقة مقص』
 『%speed / اسرع كتابة』
-『!quas / اسئلة عامة』
+『%quas / اسئلة عامة』
 『%نكت / نكت 』
 『%لعبة فكك / فكك』
 『%عواصم عشوائي/عواصم』
