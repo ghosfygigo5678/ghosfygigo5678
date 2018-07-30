@@ -2366,16 +2366,6 @@ client.on("message", message => {
   message.channel.sendEmbed(embed);
     }
 });
-client.on('message', message => {
-		     	var prefix ="%";
-                if(message.content === prefix + "inv") {
-                    let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right: Invite Dollar Bot!**")
-                    .setURL("https://discordapp.com/oauth2/authorize?client_id=473363587986096151&permissions=284170288&scope=bot");
-                   message.channel.sendEmbed(embed);
-                  }
-});
-
 
 client.on('message', message => {
     if (message.content.startsWith("%avatar")) {
@@ -2501,7 +2491,15 @@ const channel = sWlc[message.guild.id].channel
     message.channel.send(`**${message.guild.name}'s channel has been changed to ${newChannel}**`);
   }
 });
- 
+ client.on('message', message => {
+		     	var prefix ="%";
+                if(message.content === prefix + "inv") {
+                    let embed = new Discord.RichEmbed ()
+                    embed.setTitle("arrow_right Invite Sliver Bot!")
+                    .setURL("https://discordapp.com/api/oauth2/authorize?client_id=473363587986096151&permissions=485505073&scope=bot");
+                   message.channel.sendEmbed(embed);
+                  }
+});
 
 
 client.on("guildMemberAdd", member => {
