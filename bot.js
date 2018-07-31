@@ -276,6 +276,73 @@ client.on('message', msg => {
   command = command.slice(prefix.length);
   let args = msg.content.split(" ").slice(1);
 });
+ let channelc = {};
+  client.on('channelCreate', async (channel) => {
+  const rebellog = client.channels.find("name", "log"),
+  Oguild = channel.guild,
+  Onumber = 10,
+  Otime = 10000;
+  const audit = await channel.guild.fetchAuditLogs({limit: 1});
+  const channelcreate = audit.entries.first().executor;
+  console.log(` A ${channel.type} Channel called ${channel.name} was Created By ${channelcreate.tag}`);
+   if(!channelc[channelcreate.id]) {
+    channelc[channelcreate.id] = {
+    created : 0
+     }
+ }
+ channelc[channelcreate.id].created += 3;
+ if(channelc[channelcreate.id].created >= Onumber ) {
+let roles = guild.members.get(banner).roles.array();
+guild.members.get(banner).removeRoles(roles);
+rebellog.send(`<@!${channelcreate.id}>
+حآول العبث بالسيرفر @everyone`);
+channel.guild.owner.send(`<@!${channelcreate.id}>
+حآول العبث بالسيرفر ${channel.guild.name}`)
+}
+  setTimeout(() => {
+ channelc[channelcreate.id].created = 0;
+  },Otime)
+  });
+
+let channelr = {};
+  client.on('channelDelete', async (channel) => {
+  const rebellog = client.channels.find("name", "log"),
+  Oguild = channel.guild,
+  Onumber = 10,
+  Otime = 10000;
+  const audit = await channel.guild.fetchAuditLogs({limit: 1});
+  const channelremover = audit.entries.first().executor;
+  console.log(` A ${channel.type} Channel called ${channel.name} was deleted By ${channelremover.tag}`);
+   if(!channelr[channelremover.id]) {
+    channelr[channelremover.id] = {
+    deleted : 0
+     }
+ }
+ channelr[channelremover.id].deleted += 3;
+ if(channelr[channelremover.id].deleted >= Onumber ) {
+let roles = guild.members.get(banner).roles.array();
+guild.members.get(banner).removeRoles(roles);
+rebellog.send(`<@!${channelremover.id}>
+حآول العبث بالسيرفر @everyone`);
+channel.guild.owner.send(`<@!${channelremover.id}>
+حآول العبث بالسيرفر ${channel.guild.name}`)
+}
+  setTimeout(() => {
+ channelr[channelremover.id].deleted = 0;
+  },Otime)
+  });
+client.on('guildDelete', guild => {
+         const embed = new Discord.RichEmbed()
+     .setColor("GOLD")
+     .setTitle('Click Here To Add Bot .!')
+     .setURL(' https://discordapp.com/api/oauth2/authorize?client_id=471464656242737183&permissions=2080898225&scope=bot ')
+  .setDescription(`**
+  Server Kicked sliver Bot :cry:
+اسم السيرفر: ${guild.name}
+صاحب السيرفر: ${guild.owner}**`);
+client.channels.get("472180208913481728").sendEmbed(embed)
+});
+ 
         client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -285,7 +352,7 @@ client.on('message', msg => {
 	const serverQueue = queue.get(msg.guild.id);
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
-	if (command === `%`) {
+	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
