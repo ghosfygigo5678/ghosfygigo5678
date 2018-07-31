@@ -2461,7 +2461,20 @@ if (message.content.startsWith("%cv")) {
 }
 });
 
+       
+client.on('guildMemberAdd', member => {
+    const botCount = member.guild.members.filter(m=>m.user.bot).size
+    const memberCount = [member.guild.memberCount] - [botCount]
+    client.channels.get('473702352407232517').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('473702443385880576').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+});
 
+client.on('guildMemberRemove', member => {
+    const botCount = member.guild.members.filter(m=>m.user.bot).size
+    const memberCount = [member.guild.memberCount] - [botCount]
+    client.channels.get('473702352407232517').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('473702443385880576').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+});                          .
 client.on("message", (message) => {
     if (message.content.startsWith('%delet')) {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
