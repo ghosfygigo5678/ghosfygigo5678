@@ -266,6 +266,8 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
+
+
 client.on('message', msg => {
 	var prefix = "%";
   if (msg.author.bot) return;
@@ -274,7 +276,8 @@ client.on('message', msg => {
   command = command.slice(prefix.length);
   let args = msg.content.split(" ").slice(1);
 });
-client.on('message', async msg => { 
+        client.on('message', async msg => { 
+           var prefix = "%";
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
 	const args = msg.content.split(' ');
