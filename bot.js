@@ -273,7 +273,7 @@ const prefix = '%';
 const discord_token = "";
 client.login(discord_token);
 client.on('ready', function() {
-    console.log(`i am ready ${client.user.username}`);
+    
 });
 /*
 ////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\
