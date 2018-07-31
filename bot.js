@@ -173,9 +173,9 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 :gem:  البوت فيه كثير ميزات حلوة و جميلة
  ا:rocket: البوت يعمل 24 ساعه 
 
-**
-        ***__General orders__***
-**
+
+  ***__General orders__***
+
 =>%allbots)لعرض جميع البوتات الي بالسيرفر
 =>(%server)يعرض لك معلومات عن السيرفر
 =>(%bot)يعرض لك كل معلومات البوت
@@ -205,11 +205,11 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 =>(%inv)لدعوة البوت الى سيرفرك
 =>(%support)سيرفر الدعم
 =>(%contact)ارسال اقتراح او لمراسلة صاحب البوت』
-**
+
   `
 ,`
-        ***__Administrative Orders__***
-**
+    ***__Administrative Orders__***
+
 『%move) @user /  لسحب الشخص الى روومك
  (%bc) / رسالة جماعية الى كل اعضاء السيرفر
 (%role) @user <rank> / لأعطاء رتبة لعضو معين
@@ -219,7 +219,6 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 (%role) bots <rank> / لأعطاء رتبة لجميع البوتات
 (%hchannel) / اخفاء الشات
 (%schannel) / اضهار الشات المخفية
-(%clr) <numbr> / مسح الشات بعدد
  )مسح%)/ مسح الشات
 (%اسكت) @user <reason> / اعطاء العضو ميوت لازم رتبة <Muted>
 (%تكلم @user / لفك الميوت عن الشخص 
@@ -234,21 +233,18 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 (%delet) <name> / مسح الشات او الرووم فويس
 『❖!ccolors <number> / ينشا لك الوان مع كم الوان تبي
    `,`
-        ***__Music orders__***
-**
-${prefix}play / لتشغيل أغنية برآبط أو بأسم
-${prefix}skip / لتجآوز الأغنية الحآلية
-${prefix}pause / إيقآف الأغنية مؤقتا
-${prefix}resume / لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol / لتغيير درجة الصوت 100 - 0
-${prefix}stop / لإخرآج البوت من الروم
-${prefix}np / لمعرفة الأغنية المشغلة حآليا
-${prefix}queue / لمعرفة قآئمة التشغيل
-**
-        ***__Games orders__***
- **       
- %rps / حجر ورقة مقص
- %speed / اسرع كتابة
+  ***__Music orders__***
+%play  /لتشغيل أغنية برآبط أو بأسم
+%skip  /لتجآوز الأغنية الحآلية
+%pause  /إيقآف الأغنية مؤقتا
+%resume / لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+%vol / لتغيير درجة الصوت 100 - 0
+%stop / لإخرآج البوت من الروم
+%np / لمعرفة الأغنية المشغلة حآليا
+%queue / لمعرفة قآئمة التشغيل
+
+   ***__Games orders__***    
+ %اسرع كتابه / اسرع كتابة
  %quas / اسئلة عامة
  %نكت / نكت 
  %لعبة فكك / فكك
@@ -258,51 +254,9 @@ ${prefix}queue / لمعرفة قآئمة التشغيل
  %لو خيروك بطريقة حلوة / لو خيروك
  %لعبة مريم / مريم
  %فوائد ونصائح  / هل تعلم
- %يعطيك عقابات قاسية / عقاب 
-**
-   
-`]
-    let page = 1;
-
-    let embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setFooter(`Page ${page} of ${pages.length}`)
-    .setDescription(pages[page-1])
-
-    message.author.sendEmbed(embed).then(msg => {
-
-        msg.react('◀').then( r => {
-            msg.react('▶')
+ %يعطيك عقابات  / عقاب 
 
 
-        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
-        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
-
-
-        const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
-        const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
-
-
-
-        backwards.on('collect', r => {
-            if (page === 1) return;
-            page--;
-            embed.setDescription(pages[page-1]);
-            embed.setFooter(`Page ${page} of ${pages.length}`);
-            msg.edit(embed)
-        })
-        forwards.on('collect', r => {
-            if (page === pages.length) return;
-      
-      page++;
-            embed.setDescription(pages[page-1]);
-            embed.setFooter(`Page ${page} of ${pages.length}`);
-            msg.edit(embed)
-        })
-        })
-    })
-    }
-}); 
 client.on('message', message => {
      if (message.content === (prefix + "help")) {
      let embed = new Discord.RichEmbed()
@@ -319,31 +273,14 @@ client.on('message', msg => {
   let command = msg.content.split(" ")[0];
   command = command.slice(prefix.length);
   let args = msg.content.split(" ").slice(1);
-
-    if(command === "clr") {
-        const emoji = client.emojis.find("name", "wastebasket")
-    let textxt = args.slice(0).join("");
-    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
-    if (textxt == "") {
-        msg.delete().then
-    msg.channel.send("***```Supply A Number 👌```***").then(m => m.delete(3000));
-} else {
-    msg.delete().then
-    msg.delete().then
-    msg.channel.bulkDelete(textxt);
-        msg.channel.send("```Cleard: " + textxt + "\n Messages```").then(m => m.delete(3000));
-        }    
-    }
-}
 });
-
  client.on('guildCreate', guild => {
          const embed = new Discord.RichEmbed()
      .setColor("RED")
      .setTitle('Click Here To Add Bot .!')
      .setURL('https://discordapp.com/oauth2/authorize?client_id=473506088277245952&permissions=284178480&scope=bot ')
   .setDescription(`**
-  New Server Add Dollar Bot ✅
+  New Server Add PollBot Bot ✅
 اسم السيرفر: ${guild.name}
 صاحب السيرفر: ${guild.owner}**`);
 client.channels.get("286487166941528065").sendEmbed(embed)
@@ -912,74 +849,30 @@ message.channel.send(embed)
 }
 
 
-});
+}); 
 
+client.on('message', function(msg) {
+    const prefix = '%'
+    if(msg.content.startsWith ('%server')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(msg.guild.iconURL)
+      .setTitle(`Showing Details Of  **${msg.guild.name}*`)
+      .addField('🌐** server type**',`[** __${msg.guild.region}__ **]`,true)
+      .addField('🏅** __Roles__**',`[** __${msg.guild.roles.size}__ **]`,true)
+      .addField('🔴**__ Members Number__**',`[** __${msg.guild.memberCount}__ **]`,true)
+      .addField('🔵**__ Members Number who online__**',`[** __${msg.guild.members.filter(m=>m.presence.status == 'online').size}__ **]`,true)
+      .addField('📝**__ Text Channels__**',`[** __${msg.guild.channels.filter(m => m.type === 'text').size}__** ]`,true)
+      .addField('🎤**__ voice Channels__**',`[** __${msg.guild.channels.filter(m => m.type === 'voice').size}__ **]`,true)
+      .addField('👑**__ The Owner__**',`**${msg.guild.owner}**`,true)
+      .addField('🆔**__ Server ID__**',`**${msg.guild.id}**`,true)
+      .addField('📅**__The date when the server created __**',msg.guild.createdAt.toLocaleString())
+      msg.channel.send({embed:embed});
+    }
+  });
 
-client.on("message", function(message) {
-	var prefix = "%";
-   if(message.content.startsWith(prefix + "rps")) {
-    let messageArgs = message.content.split(" ").slice(1).join(" ");
-    let messageRPS = message.content.split(" ").slice(2).join(" ");
-    let arrayRPS = ['**# - Rock**','**# - Paper**','**# - Scissors**'];
-    let result = `${arrayRPS[Math.floor(Math.random() * arrayRPS.length)]}`;
-    var RpsEmbed = new Discord.RichEmbed()
-    .setAuthor(message.author.username)
-    .setThumbnail(message.author.avatarURL)
-    .addField("Rock","🇷",true)
-    .addField("Paper","🇵",true)
-    .addField("Scissors","🇸",true)
-    message.channel.send(RpsEmbed).then(msg => {
-        msg.react(' 🇷')
-        msg.react("🇸")
-        msg.react("🇵")
-.then(() => msg.react('🇷'))
-.then(() =>msg.react('🇸'))
-.then(() => msg.react('🇵'))
-let reaction1Filter = (reaction, user) => reaction.emoji.name === '🇷' && user.id === message.author.id;
-let reaction2Filter = (reaction, user) => reaction.emoji.name === '🇸' && user.id === message.author.id;
-let reaction3Filter = (reaction, user) => reaction.emoji.name === '🇵' && user.id === message.author.id;
-let reaction1 = msg.createReactionCollector(reaction1Filter, { time: 12000 });
-	    
-let reaction2 = msg.createReactionCollector(reaction2Filter, { time: 12000 });
-let reaction3 = msg.createReactionCollector(reaction3Filter, { time: 12000 });
-reaction1.on("collect", r => {
-        message.channel.send(result)
-})
-reaction2.on("collect", r => {
-        message.channel.send(result)
-})
-reaction3.on("collect", r => {
-        message.channel.send(result)
-})
+    
 
-    })
-}
-});
-
- client.on('message', message => {
-	 var prefix ="%";
- if(message.content.startsWith(prefix +"server")){
-if(!message.channel.guild) return message.reply(' ');
-const millis = new Date().getTime() - message.guild.createdAt.getTime();
-const now = new Date();
-dateFormat(now, 'dddd, mmmm dS, yyyy, h:MM:ss TT');
-const verificationLevels = ['None', 'Low', 'Medium', 'Insane', 'Extreme'];
-const days = millis / 1000 / 60 / 60 / 24;
-let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
-var embed  = new Discord.RichEmbed()
-.setAuthor(message.guild.name, message.guild.iconURL)
-.addField("**🆔 Server ID:**", message.guild.id,true)
-.addField("**📅 Created On**", message.guild.createdAt.toLocaleString(),true)
-.addField("**👑 Owned by**",`${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`)
-.addField("👥 Members ",`[${message.guild.memberCount}]`,true)
-.addField('**💬 Channels **',`**${message.guild.channels.filter(m => m.type === 'text').size}**` + ' text | Voice  '+ `**${message.guild.channels.filter(m => m.type === 'voice').size}** `,true)
-.addField("**🌍 Others **" , message.guild.region,true)
-.addField("** 🔐 Roles **",`**[${message.guild.roles.size}]** Role `,true)
-.setColor('#000000')
-message.channel.sendEmbed(embed)
-
-}
-});
 client.on('message', message => {
     if (message.content.startsWith("%bot")) {
     message.channel.send({
