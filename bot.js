@@ -277,7 +277,6 @@ client.on('message', msg => {
   let args = msg.content.split(" ").slice(1);
 });
         client.on('message', async msg => { 
-           var prefix = "%";
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
 	const args = msg.content.split(' ');
@@ -286,7 +285,7 @@ client.on('message', msg => {
 	const serverQueue = queue.get(msg.guild.id);
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
-	if (command === `play`) {
+	if (command === `%`) {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
