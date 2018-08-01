@@ -231,7 +231,7 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 (%ct) <name> / انشاء شات
 (%cv) <name> / انشاء رووم فويس
 (%delet) <name> / مسح الشات او الرووم فويس
-『❖!ccolors <number> / ينشا لك الوان مع كم الوان تبي
+❖%ccolors <number> / ينشا لك الوان مع كم الوان تبي
    `,`
   ***__Music orders__***
 %play  /لتشغيل أغنية برآبط أو بأسم
@@ -2382,16 +2382,6 @@ client.on("message", (message) => {
         if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
         channel.delete()
     }
-});  
-
-const sWlc = {}
-const premium = ['389090790984515594']
-client.on('message', message => {
-var prefix = "%";
-if(message.channel.type === "dm") return;
-if(message.author.bot) return;
-  if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
-    channel: "welcome"
 });
 const channel = sWlc[message.guild.id].channel
   if (message.content.startsWith(prefix + "setwelcomer")) {
