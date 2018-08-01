@@ -2483,8 +2483,5 @@ client.on("guildMemberAdd", member => {
       }
       });
 
-
-
-
 //Malk END NOW THIS IS END
 client.login(process.env.BOT_TOKEN);
