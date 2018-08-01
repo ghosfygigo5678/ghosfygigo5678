@@ -2401,3 +2401,6 @@ const channel = sWlc[message.guild.id].channel
                    message.channel.sendEmbed(embed);
                   }
 });
+
+
+client.login(process.env.BOT_TOKEN);
