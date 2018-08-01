@@ -369,7 +369,7 @@ if(ra3d.content.startsWith(prefix + 'ccolors')) {
 
 
 
-const zead = [
+const Mryam = [
    '*** انا اسمي مريم ***',
    '*** مرحباَ ماهو اسمك ؟ ***',
    `*** اهلا بك ! انا تائهه في هذا المكان  ***`,
@@ -435,7 +435,7 @@ if (message.content.startsWith(prefix + 'trans')) {
     
         const embed = new Discord.RichEmbed()
             .setColor("FFFFFF")
-            .setDescription("**ترجمة الكتابة.**\استع��ل: `-translate <الكلمة لتبي> <االغة>`");
+            .setDescription("**ترجمة الكتابة.**\استعمل: `-translate <الكلمة لتبي> <االغة>`");
 
         return message.channel.send(embed);
 
