@@ -183,7 +183,7 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-			eturn msg.channel.send('تم إيقاف الموسيقى مؤقتا!');
+		return msg.channel.send('تم إيقاف الموسيقى مؤقتا!');
 		}//by ,$ PollBot ء , 🔕#4777 'CODES SERVER'
 		return msg.channel.send('لا يوجد شيء حالي ف العمل.');
 	} else if (command === "resume") {
