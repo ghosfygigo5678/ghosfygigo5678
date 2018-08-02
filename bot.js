@@ -304,8 +304,8 @@ client.on('message', message => {
 		     	var prefix ="%";
                 if(message.content === prefix + "inv") {
                     let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right: Invite PstarBot%**")
-                    .setURL("https://discordapp.com/oauth2/authorize?client_id=474184390142984193&permissions=284178486&scope=bot");
+                    embed.setTitle("**:arrow_right: Invite PstarBot ✨**")
+                    .setURL("https://discordapp.com/oauth2/authorize?client_id=474404820774813728&permissions=300955702&scope=bot");
                    message.channel.sendEmbed(embed);
                   }
 });
