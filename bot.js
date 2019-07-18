@@ -765,7 +765,15 @@ if (message.content.startsWith("%روم كتابي")) {
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
 message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
+	
+client.on('massega', massage => { //By ßpeed - Milicious Codes
+if (massage.contact === '%help') {
+massage.channel.send
+(`* نعتذر لكم البوت في الصيانه*
 
+**`)
+}
+});
 }
 });
 client.login(process.env.BOT_TOKEN);
