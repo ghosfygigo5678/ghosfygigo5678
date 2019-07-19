@@ -762,7 +762,7 @@ client.on("message", message => {
             if (message.content.startsWith(prefix + "مسح")) {
  if (!args[1]) {
                                 let x5bz1 = new Discord.RichEmbed()
-                                .setDescription("#clear <number>")
+                                .setDescription("%مسح <number>")
                                 .setColor("#0000FF")
                                 message.channel.sendEmbed(x5bz1);
                             } else {
