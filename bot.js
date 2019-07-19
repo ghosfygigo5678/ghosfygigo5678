@@ -777,9 +777,9 @@ client.on("message", message => {
                                 message.channel.sendEmbed(x5bz2);
                             }
                           }
-});
 
-});
+
+
 }
 });
 client.login(process.env.BOT_TOKEN);
