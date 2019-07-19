@@ -630,26 +630,13 @@ client.on('message', message => {
   .catch(console.error);
 }
 });           
-client.on("message", message => { //clear
-              var args = message.content.substring(prefix.length).split(" ");
-              if (message.content.startsWith(prefix + "مسح")) {
-                  if(!message.channel.guild) return message.reply('**❌ اسف لكن هذا الامر للسيرفرات فقط **');         
-     if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**⚠  لا يوجد لديك صلاحية لمسح الشات**');
-          var msg;
-          msg = parseInt();
-        
-        message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-        message.channel.sendMessage("", {embed: {
-          title: "``تــم مسح الشات ``",
-          color: 0x5016f3, 
-          footer: {
-            
-          }
-        }}).then(msg => {msg.delete(3000)});
-                            }
-  
-       
+client.on('message', message => {
+if(message.content.startsWith(prefix +'ping'))  {  
+    message.channel.send("Pong !");
+    }
   });
+       
+
 client.on("message", async message => {
 var prefix = "%";
 var aoasm =[
@@ -757,22 +744,41 @@ client.on('message', message => {
         if(message.content.startsWith(prefix + "roll")){
             if(!args) return message.channel.send("الرجاء اختيار رقم")
             message.channel.send(Math.floor(Math.random() * args))
-        }
-    });
-client.on("message", (message) => {
-if (message.content.startsWith("%روم كتابي")) {
-            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
-        let args = message.content.split(" ").slice(1);
-    message.guild.createChannel(args.join(' '), 'text');
-message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
-	
-client.on('massega', massage => { //By ßpeed - Milicious Codes
-if (massage.contact === '%help') {
-massage.channel.send
-(`* نعتذر لكم البوت في الصيانه*
+	});	
+ client.on("message", message => {
+	var prefix ="%";
+  if (message.channel.type === "dm") {  
 
-**`)
-}
+      message.channel.startTyping();  
+      setTimeout(() => {  
+        message.channel.stopTyping();  
+      }, Math.random() * (1 - 3) + 1 * 1000);
+   
+  }  
+}); 
+client.on("message", message => {
+    var prefix = "%";
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "مسح")) {
+ if (!args[1]) {
+                                let x5bz1 = new Discord.RichEmbed()
+                                .setDescription("#clear <number>")
+                                .setColor("#0000FF")
+                                message.channel.sendEmbed(x5bz1);
+                            } else {
+                            let messagecount = parseInt(args[1]);
+                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+                                                          message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+                            message.channel.fetchMessages({limit: messagecount}).then(messages => message.channel.bulkDelete(messages));
+                            let x5bz2 = new Discord.RichEmbed()
+                                                            .setColor("#008000")
+                                .setDescription(":white_check_mark: | Delete " + args[1] + " Message!")
+                                                                                        message.delete("..");
+                                message.channel.sendEmbed(x5bz2);
+                            }
+                          }
+});
+
 });
 }
 });
